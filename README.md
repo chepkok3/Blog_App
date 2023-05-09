@@ -120,6 +120,6 @@ Much appreciation to the Microverse community for providing the guidance and sup
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://github.com/chepkok3/Blog_App/blob/data-model/MIT%20LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
