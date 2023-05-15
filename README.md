@@ -37,6 +37,12 @@ This is a blog application that shows the list of posts and enables readers to i
 - Create posts.
 - List all the posts.
 - Add comments and likes to a post.
+- Set up associations between models
+- Write SQL queries with Active Record
+- Use validations for models
+- Write unit tests for models
+- Write request tests for models
+- Set up the view models
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -62,6 +68,7 @@ To run this project you need the following dependencies:
 - Install dependencies:
 
 ```sh
+cd Blog_App
   bundle install
 ```
 
@@ -76,8 +83,7 @@ To run this project you need the following dependencies:
 To run the project, execute the following command in the terminal:
 
 ```sh
-  cd Blog_App
-  rails s
+  ruby bin/rails server
 ```
 
 ## 👥 Author <a name="author"></a>
