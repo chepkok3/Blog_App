@@ -3,33 +3,33 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
   let!(:user) do
     User.create(
-      name: 'Rails',
-      photo: 'http://localhost:3000/thursday.png',
-      bio: 'Something test',
-      postscounter: 10
+      name: 'Thursday',
+      photo: 'https://www.google.com',
+      bio: 'I am a Ruby on Rails developer',
+      posts_counter: 10
     )
   end
 
   let!(:post) do
     Post.create(
       title: 'Ruby',
-      text: 'Learn Ruby',
+      text: 'Ruby is a programming language',
       author: user,
-      commentscounter: 10,
-      likescounter: 10
+      comments_counter: 10,
+      likes_counter: 10
     )
   end
 
   describe 'GET /index' do
     before do
-      get "/users/#{user.id}/posts/"
+      get "/users/#{user.id}/posts"
     end
 
-    it 'renders post template' do
+    it 'renders posts template' do
       expect(response).to render_template(:index)
     end
 
-    it 'post response body includes correct placeholder text' do
+    it 'the post response body has correct placeholder text' do
       expect(response.body).to include('list of posts for a given user')
     end
   end
@@ -39,7 +39,7 @@ RSpec.describe 'Posts', type: :request do
       get "/users/#{user.id}/posts/#{post.id}"
     end
 
-    it 'returns success for detail post' do
+    it 'returns successful execution for detail post ' do
       expect(response).to have_http_status(200)
     end
 
@@ -47,7 +47,7 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to render_template(:show)
     end
 
-    it 'post detail response body includes correct placeholder text' do
+    it 'the post detail response body has correct placeholder text' do
       expect(response.body).to include('Post detail with comments')
     end
   end

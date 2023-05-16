@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe 'Users', type: :request do
   let(:user) do
     User.create(
-      name: 'Madrid',
-      photo: 'http://localhost:3000/hammer.png',
-      bio: 'Champions League Final',
-      postscounter: 20
+      name: 'Wednesday',
+      photo: 'https://www.google.com',
+      bio: 'Time for Ruby on Rails',
+      posts_counter: 20
     )
   end
 
@@ -19,11 +19,11 @@ RSpec.describe 'Users', type: :request do
       expect(response).to have_http_status(200)
     end
 
-    it 'renders user template' do
+    it 'renders template for the user' do
       expect(response).to render_template(:index)
     end
 
-    it 'user responsed body with correct place holder' do
+    it 'the user responsed with correct place holder' do
       expect(response.body).to include('List of users')
     end
   end
@@ -33,11 +33,11 @@ RSpec.describe 'Users', type: :request do
       get "/users/#{user.id}"
     end
 
-    it 'returns success for detail user' do
+    it 'returns successful execution for detail user' do
       expect(response).not_to have_http_status(400)
     end
 
-    it 'returns success for detail user' do
+    it 'returns successful execution for detail user' do
       expect(response).to have_http_status(200)
     end
 
@@ -49,8 +49,8 @@ RSpec.describe 'Users', type: :request do
       expect(response).not_to render_template(:index)
     end
 
-    it 'user detail responsed body with correct place holder' do
-      expect(response.body).to include('A given User detail with posts')
+    it 'the user detail responsed body has correct place holder' do
+      expect(response.body).to include('User detail with posts')
     end
   end
 end
