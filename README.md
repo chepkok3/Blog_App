@@ -42,7 +42,7 @@ This is a blog application that shows the list of posts and enables readers to i
 - Use validations for models
 - Write unit tests for models
 - Write request tests for models
-- Set up the view models
+- Set up the view model
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

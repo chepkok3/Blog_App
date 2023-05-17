@@ -1,12 +1,12 @@
 <h1>list of posts for a given user </h1>
 <%= render 'shared/user', user:@user%>
- <div class="post_list">
+ <div class="list_posts">
    <% @posts.each do |post| %>
 
       <%= render 'shared/post', post:post %>
 
      <% if  !post.recent_comments.empty?%>
-         <div class ="post_comment">
+         <div class ="comments_posted">
      <%post.recent_comments.each do |comment| %>
           <%= render 'shared/comment', comment:comment %>
        <% end %>
