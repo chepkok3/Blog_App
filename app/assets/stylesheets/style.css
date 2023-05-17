@@ -78,7 +78,7 @@ button > a {
   text-align: end;
 }
 
-.bio {
+.user_bio {
   display: flex;
   flex-direction: column;
   width: 97%;
