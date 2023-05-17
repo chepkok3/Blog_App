@@ -29,8 +29,8 @@ h1 {
   min-width: 100px;
 }
 
-.user_card_detail {
-  width: 80%;
+.users_card_details {
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -51,14 +51,14 @@ button > a {
   color: #000;
 }
 
-.user_card_detail > h2 > a {
+.users_card_details > h2 > a {
   font-size: 30px;
   padding-left: 15px;
   color: #000;
   text-decoration: none;
 }
 
-.post_card > h4 > a {
+.posts_card > h4 > a {
   font-size: 20px;
   padding-left: 15px;
   color: #000;
@@ -66,11 +66,11 @@ button > a {
   margin-top: 5px;
 }
 
-.user_card_detail > h2 > a:hover {
-  color: darkcyan;
+.users_card_details > h2 > a:hover {
+  color: rgb(139, 0, 116);
 }
 
-.user_card_detail > p {
+.users_card_details > p {
   font-size: 20px;
   padding-right: 25px;
   color: #000;
@@ -78,7 +78,7 @@ button > a {
   text-align: end;
 }
 
-.user_bio {
+.bio {
   display: flex;
   flex-direction: column;
   width: 97%;
@@ -98,7 +98,7 @@ button > a {
   padding-left: 15px;
 }
 
-.user_post {
+.users_post {
   display: flex;
   flex-direction: column;
   width: 97%;
@@ -121,13 +121,13 @@ button > a {
   margin-top: 5px;
 }
 
-.post_counter {
+.posts_counter {
   padding-right: 20px;
   color: #000;
   text-align: end;
 }
 
-.button_holder {
+.holder_button {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -146,10 +146,10 @@ button {
 }
 
 button:hover {
-  color: darkcyan;
+  color: rgb(139, 0, 120);
 }
 
-.post_list {
+.list_posts {
   display: flex;
   flex-direction: column;
   width: 97%;
@@ -166,12 +166,12 @@ button:hover {
   margin-bottom: 10px;
 }
 
-.post_comment > p {
+.comments_posted > p {
   padding-left: 15px;
   margin-top: 10px;
 }
 
-.post_detail {
+.details_post {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -179,7 +179,7 @@ button:hover {
   padding: 0 10px;
 }
 
-.post_detail_card {
+.details_post_card {
   display: flex;
   flex-direction: column;
   width: 97%;
@@ -190,18 +190,18 @@ button:hover {
   padding: 10px;
 }
 
-.post_detail_card_header {
+.details_post_card_header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-right: 10px;
 }
 
-.post_detail_card_header > .post_title {
+.details_post_card_header > .post_title {
   font-size: 20px;
 }
 
-.post_detail_comment {
+.details_post_comment {
   border: 1px solid #504d4d;
   border-radius: 1px;
   background-color: #fff;
