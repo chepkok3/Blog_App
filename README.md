@@ -43,6 +43,7 @@ This is a blog application that shows the list of posts and enables readers to i
 - Write unit tests for models
 - Write request tests for models
 - Set up the view model
+- Add rails form helpers
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
