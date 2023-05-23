@@ -1,36 +1,34 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts
+    @posts = @user.posts.includes(:comments).order(created_at: :desc)
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(:comments).find(params[:id])
+    @user = @post.author
   end
 
   def new
-    @post = @current_user.posts.new
+    @post = Post.new
+    @user = current_user
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @post = @user.posts.new(post_params)
-    @post.comments_counter = 0
-    @post.likes_counter = 0
-    respond_to do |format|
-      format.html do
-        if @post.save
-          redirect_to user_posts_path(@user)
-        else
-          render :new, locals: { post: @post }
-        end
-      end
+    @post = current_user.posts.create(post_params)
+    if @post.valid?
+      redirect_to user_post_path(current_user, @post), notice: 'The post was created'
+    else
+      redirect_to new_user_post_path(current_user), alert: 'The post was not created'
     end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :text)
+    post = params.require(:post).permit(:title, :text)
+    post[:comments_counter] = 0
+    post[:likes_counter] = 0
+    post
   end
 end

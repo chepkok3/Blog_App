@@ -1,6 +1,6 @@
-require 'rails_helper'
+require_relative './rails_helper'
 
-RSpec.describe Like, type: :model do
+RSpec.describe Comment, type: :model do
   let(:user) do
     User.create(
       name: 'Loren',
@@ -21,8 +21,9 @@ RSpec.describe Like, type: :model do
   end
 
   subject do
-    Like.new(
-      post:,
+    Comment.new(
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      post: post,
       author: user
     )
   end
@@ -30,13 +31,13 @@ RSpec.describe Like, type: :model do
   before { subject.save }
 
   describe 'Functionality' do
-    context 'update likes_counter' do
+    context 'update comments_counter' do
       before do
         # Reset the post's likes_counter to 0 before running the test
-        post.update(likes_counter: 0)
+        post.update(comments_counter: 0)
       end
-      it 'updates the likes_counter of the post' do
-        expect { subject.update_likes_counter }.to change { post.likes_counter }.from(0).to(1)
+      it 'updates the comments_counter of the post' do
+        expect { subject.update_comments_counter }.to change { post.comments_counter }.from(0).to(1)
       end
     end
   end

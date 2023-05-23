@@ -1,28 +1,16 @@
-<h1> User information with posts </h1>
-<%= render 'shared/user', user:@user%>
+<%= render partial: 'user', locals: { user: @user}%>
 
-<div class="bio_user">
- <h3>Bio</h3>
- <p><%= @user.bio %><p>
-</div>
+<article class="user_view">
+  <div class="bio_user">
+    <h4>Bio</h4>
+    <div>
+    <%= @user.bio %>
+    </div>
+  </div>
+</article>
 
-<div class="users_post">
-   <% @user.recent_posts.each do |post| %>
+<%= render partial: 'posts/post', collection: @user.recent_posts, locals: { truncated_message: true, show_lasts_comments: true }%>
 
-      <%= render 'shared/post', post:post %>
-   <%end%>
-
-</div>
-<div class="holder_button">
-
-<button>
-<%= link_to 'Create new post', new_user_post_path(@user)%>
-</button>
-
-<button>
- <%= link_to 'View all posts', user_posts_path(@user,@posts) %>
-</button>
-<button>
- <%= link_to 'Back', :back %>
-</button>
-</div>
+<%= link_to user_posts_path(@user.id) do %>
+  <button>See all posts</button>
+<% end %>

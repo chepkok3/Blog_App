@@ -1,20 +1,20 @@
-require_relative '../rails_helper'
+require_relative './rails_helper'
 
 RSpec.describe Post, type: :model do
   let(:user) do
     User.create(
-      name: 'John',
-      photo: 'https://non-existing-photo.com',
+      name: 'Loren',
+      photo: 'https://this-person-does-not-exist.com/en/download-page?image=genef4e9868ae582ca3061881b69d8fbeb1',
       posts_counter: 0,
-      bio: 'I am John, and I love sport'
+      bio: 'I am Loren, and I love sport.'
     )
   end
 
   subject do
     Post.new(
-      title: 'Initial post',
+      title: 'My first post',
       author: user,
-      text: 'Working hard to become a developer.',
+      text: 'The motivation to become developer is very big.',
       comments_counter: 0,
       likes_counter: 0
     )
