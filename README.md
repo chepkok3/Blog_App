@@ -87,13 +87,19 @@ To run the project, execute the following command in the terminal:
   ruby bin/rails server
 ```
 
-## 👥 Author <a name="author"></a>
+## 👥 Authors <a name="author"></a>
 
 👤 **Stanley Kibor**
 
 - GitHub: [@chepkok3](https://github.com/chepkok3)
 - Twitter: [@chepkok3](https://twitter.com/home)
 - LinkedIn: [@chepkok3](https://www.linkedin.com/in/kibor-stanley-350b8a123/)
+
+👤 **Hien Phan**
+
+- GitHub: [hienphan0111](https://github.com/hienphan0111)
+- Twitter: [hienphan0111](https://twitter.com/hienphan0111)
+- LinkedIn: [mr-hienphan](https://www.linkedin.com/in/hien-phan-61097b256/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
