@@ -1,20 +1,20 @@
-require_relative '../rails_helper'
+require_relative './rails_helper'
 
 RSpec.describe Comment, type: :model do
   let(:user) do
     User.create(
-      name: 'John',
-      photo: 'https://person is inexistent.com',
+      name: 'Loren',
+      photo: 'https://this-person-does-not-exist.com/en/download-page?image=genef4e9868ae582ca3061881b69d8fbeb1',
       posts_counter: 0,
-      bio: 'I am John, and I love sport'
+      bio: 'I am Loren, and I love sport.'
     )
   end
 
   let(:post) do
     Post.create(
-      title: 'Initial post',
+      title: 'My first post',
       author: user,
-      text: 'Working hard to become a developer.',
+      text: 'The motivation to become developer is very big.',
       comments_counter: 0,
       likes_counter: 0
     )
@@ -22,7 +22,7 @@ RSpec.describe Comment, type: :model do
 
   subject do
     Comment.new(
-      text: 'This is my first comment',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       post:,
       author: user
     )
@@ -33,6 +33,7 @@ RSpec.describe Comment, type: :model do
   describe 'Functionality' do
     context 'update comments_counter' do
       before do
+        # Reset the post's likes_counter to 0 before running the test
         post.update(comments_counter: 0)
       end
       it 'updates the comments_counter of the post' do
