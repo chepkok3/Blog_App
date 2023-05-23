@@ -2,7 +2,7 @@ class LikesController < ApplicationController
   def create
     user = current_user
     post = Post.find(params[:post_id])
-    new_like = Like.create(post: post, author: user)
+    new_like = Like.create(post:, author: user)
     if new_like.valid?
       flash[:success] = 'commented successfully'
       respond_to do |format|

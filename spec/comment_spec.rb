@@ -23,7 +23,7 @@ RSpec.describe Comment, type: :model do
   subject do
     Comment.new(
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      post: post,
+      post:,
       author: user
     )
   end
