@@ -1,6 +1,12 @@
+<%# <%= render partial: 'users/user', locals: { user: @user } %>
+
+<%# <%= render partial: 'post', collection: @posts, locals: { truncated_message: true, show_lasts_comments: true} %> 
+
 <%= render partial: 'users/user', locals: { user: @user } %>
 
-<%= render partial: 'post', collection: @posts, locals: { truncated_message: true, show_lasts_comments: true} %>
+<%= render partial: 'post', collection: @posts.includes(:comments), locals: { truncated_message: true, show_lasts_comments: true} %>
+
 
 <button>Pagination</button>
+
 
