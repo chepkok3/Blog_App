@@ -1,0 +1,350 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.user_card {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.user_card_image {
+  background-color: #eee;
+  display: flex;
+  width: 13%;
+  margin-left: 20px;
+  border: 1px solid #504d4d;
+  border-radius: 1px;
+  box-shadow: 0 0 5px #ccc;
+  margin-right: 2%;
+  min-width: 100px;
+}
+
+.user_card_detail {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid #504d4d;
+  border-radius: 1px;
+  background-color: #fff;
+}
+
+.image-placeholder {
+  background-color: #eee;
+  display: flex;
+  margin: 0 auto;
+  align-self: center;
+}
+
+button > a {
+  text-decoration: none;
+  color: #000;
+}
+
+.user_card_detail > h2 > a {
+  font-size: 30px;
+  padding-left: 15px;
+  color: #000;
+  text-decoration: none;
+}
+
+.post_card > h4 > a {
+  font-size: 20px;
+  padding-left: 15px;
+  color: #000;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.user_card_detail > h2 > a:hover {
+  color: darkcyan;
+}
+
+.user_card_detail > p {
+  font-size: 20px;
+  padding-right: 25px;
+  color: #000;
+  text-decoration: none;
+  text-align: end;
+}
+
+.user_bio {
+  display: flex;
+  flex-direction: column;
+  width: 97%;
+  border: 1px solid #504d4d;
+  border-radius: 1px;
+  margin-left: 27px;
+  background-color: #fff;
+}
+
+.user_bio > h3 {
+  font-size: 25px;
+  padding-left: 15px;
+  color: #000;
+}
+
+.user_bio > p {
+  padding-left: 15px;
+}
+
+.user_post {
+  display: flex;
+  flex-direction: column;
+  width: 97%;
+  margin-left: 27px;
+}
+
+.post_card {
+  border: 1px solid #504d4d;
+  border-radius: 1px;
+  background-color: #fff;
+  margin-top: 10px;
+}
+
+.post_card > h4 > a:hover {
+  color: darkcyan;
+}
+
+.post_card > p {
+  padding-left: 15px;
+  margin-top: 5px;
+}
+
+.post_counter {
+  padding-right: 20px;
+  color: #000;
+  text-align: end;
+}
+
+.button_holder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  border: 1px solid #504d4d;
+  border-radius: 1px;
+  padding: 5px;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+button:hover {
+  color: darkcyan;
+}
+
+.post_list {
+  display: flex;
+  flex-direction: column;
+  width: 97%;
+  margin-left: 27px;
+}
+
+.post_comment {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #504d4d;
+  border-radius: 1px;
+  background-color: #fff;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.post_comment > p {
+  padding-left: 15px;
+  margin-top: 10px;
+}
+
+.post_detail {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.post_detail_card {
+  display: flex;
+  flex-direction: column;
+  width: 97%;
+  border: 1px solid #504d4d;
+  border-radius: 1px;
+  margin-left: 10px;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.post_detail_card_header {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.post_title_card {
+  font-size: 20px;
+}
+
+.post_detail_comment {
+  border: 1px solid #504d4d;
+  border-radius: 1px;
+  background-color: #fff;
+  margin-top: 10px;
+  width: 97%;
+  padding: 10px;
+  margin-left: 11px;
+}
+
+.post_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #504d4d;
+  border-radius: 1px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px 20px;
+  height: 400px;
+  margin-top: 20px;
+}
+
+.post_form > h3 {
+  font-size: 25px;
+}
+
+.post_title {
+  width: 150%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post_text {
+  width: 155%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post_button {
+  border: 1px solid #504d4d;
+  border-radius: 1px;
+  padding: 5px;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-right: 45px;
+}
+
+.comment_like_holder {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 10px;
+  margin-top: 20px;
+}
+
+.comment_form_holder {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid #504d4d;
+  border-radius: 1px;
+  background-color: #fff;
+  align-items: center;
+  margin-right: 21px;
+}
+
+.like_form_holder {
+  width: 34%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid #504d4d;
+  border-radius: 1px;
+  background-color: #fff;
+  align-items: center;
+}
+
+.comment_form_holder > h3 {
+  font-size: 20px;
+}
+
+.like_form_holder > h3 {
+  font-size: 20px;
+}
+
+.comment_form {
+  margin-right: 50px;
+}
+
+.comment_input {
+  width: 200%;
+}
+
+/* ----------styling authenthication ---------- */
+
+.sign_out_button {
+  text-align: right;
+  margin-right: 25px;
+}
+
+.sign_out_button > button {
+  width: 120px;
+}
+
+.user_holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #504d4d;
+  border-radius: 1px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 450px;
+  margin-top: 20px;
+  padding-right: 15%;
+  padding-bottom: 20px;
+}
+
+.user_holder > h2 {
+  font-size: 25px;
+  padding-left: 20%;
+}
+
+.user_input {
+  width: 300px;
+  min-height: 25px;
+  margin-left: 150px;
+}
+
+.user_field {
+  margin-left: 150px;
+}
+
+.user_setting {
+  margin-top: 20px;
+  text-align: center;
+  padding-left: 20%;
+}
+
+select {
+  width: 300px;
+  min-height: 25px;
+  margin-left: 150px;
+}
