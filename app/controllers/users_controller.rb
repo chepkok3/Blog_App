@@ -24,8 +24,8 @@ class UsersController < ApplicationController
   def find_user
     @user = User.find_by(id: params[:id])
 
-    unless @user
-      redirect_to users_path, alert: 'User not found'
-    end
+    return if @user
+
+    redirect_to users_path, alert: 'User not found'
   end
 end
