@@ -1,26 +1,32 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+
   def new
-    @post = Post.find(params[:post_id])
-    @user = current_user
-    @comment = Comment.new
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:post_id])
   end
 
   def create
+    @user = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
-    @user = current_user
-
-    @comment = Comment.create(author: @user, post: @post, text: comments_params['text'])
-
-    if @comment.valid?
-      redirect_to user_post_path(@user, @post), notice: 'The comment is created'
+    @comment = @post.comments.new(comment_params)
+    @comment.author = @user
+    if @comment.save
+      redirect_to request.referrer
     else
-      redirect_to new_post_comment_path(@user, @post), alert: 'The comment was not created'
+      render :new
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to request.referrer
   end
 
   private
 
-  def comments_params
+  def comment_params
     params.require(:comment).permit(:text)
   end
 end

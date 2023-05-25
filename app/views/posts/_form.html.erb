@@ -1,14 +1,11 @@
 <%= form_with model: [@user, @post] do |form| %>
-
-  <div class="post_title">
-    <%= form.label :title%>
-    <%= form.text_field :title%>
+  <div class="post_form">
+    <h3>Add New Post</h3>
+    <div>
+      <%= form.label :title %><br>
+      <%= form.text_field :title, class: 'post_title' %>
+    </div>
+    <!-- Other form fields -->
+    <%= form.submit 'Create Post' %>
   </div>
-
-  <div class="post_text">
-    <%= form.label :text%>
-    <%= form.text_area :text%>
-  </div>
-
-  <button class="submit_btn"><%= form.submit %></button>
 <% end %>

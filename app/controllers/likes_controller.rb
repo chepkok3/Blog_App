@@ -1,15 +1,16 @@
 class LikesController < ApplicationController
+  load_and_authorize_resource :user
+  load_and_authorize_resource :post, through: :user
+
+  def new; end
+
   def create
-    user = current_user
-    post = Post.find(params[:post_id])
-    new_like = Like.create(post:, author: user)
-    if new_like.valid?
-      flash[:success] = 'commented successfully'
-      respond_to do |format|
-        format.html { redirect_to request.referrer, notice: 'Liked' }
-      end
+    @like = @post.likes.build(author: @user)
+
+    if @like.save
+      redirect_to user_post_path(@user, @post)
     else
-      flash[:alert] = 'error creating comment'
+      render :new
     end
   end
 end
