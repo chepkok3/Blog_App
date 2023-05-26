@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   load_and_authorize_resource :post, through: :user
 
   before_action :set_user
-  before_action :set_post, only: [:show, :destroy]
+  before_action :set_post, only: %i[show destroy]
 
   def index
     @user = User.find(params[:user_id])
@@ -17,8 +17,8 @@ class PostsController < ApplicationController
   end
 
   def show
-  @user = User.find(params[:user_id])
-  @post = @user.posts.find(params[:id])
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
     respond_to do |format|
       format.html
       format.xml { render xml: @comments }
@@ -51,5 +51,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text)
   end
-end 
-  
+end
