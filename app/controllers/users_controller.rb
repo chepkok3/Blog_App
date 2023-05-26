@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource except: :index
-
+  load_and_authorize_resource
   def index
     @users = User.all
   end
@@ -23,9 +22,6 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find_by(id: params[:id])
-
-    return if @user
-
-    redirect_to users_path, alert: 'User not found'
+    redirect_to users_path, alert: 'User not found' unless @user
   end
 end

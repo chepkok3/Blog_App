@@ -1,41 +1,52 @@
 class PostsController < ApplicationController
-  before_action :set_user, only: %i[index show new create destroy]
+  load_and_authorize_resource :user
+  load_and_authorize_resource :post, through: :user
+
+  before_action :set_user
   before_action :set_post, only: %i[show destroy]
 
   def index
+    @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
+
+    respond_to do |format|
+      format.html
+      format.xml { render xml: @posts }
+      format.json { render json: @posts }
+    end
   end
 
-  def show; end
+  def show
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.xml { render xml: @comments }
+      format.json { render json: @post.comments }
+    end
+  end
 
   def new
-    @user = User.find(params[:user_id])
-    @post = @user.posts.build
+    @post = current_user.posts.new
   end
 
   def create
-    @post = @user.posts.new(post_params)
+    @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to user_posts_path(@user)
+      redirect_to user_posts_path(current_user)
     else
       render :new
     end
   end
 
   def destroy
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
     @post.destroy
     redirect_to user_posts_path(@user)
   end
 
   private
-
-  def set_user
-    @user = User.find(params[:user_id])
-  end
-
-  def set_post
-    @post = @user.posts.find(params[:id])
-  end
 
   def post_params
     params.require(:post).permit(:title, :text)

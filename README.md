@@ -46,6 +46,7 @@ This is a blog application that shows the list of posts and enables readers to i
 - Add rails form helpers
 - Add integration specs
 - Add devise gem for authentication
+- Add api for posts and comments
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
