@@ -1,21 +1,35 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource
 
+  def index
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:post_id])
+    @comments = @post.comments
+    respond_to do |format|
+      format.json { render json: @comments }
+    end
+  end
+
   def new
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:post_id])
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
     @comment.author = @user
+
+    respond_to do |format|
     if @comment.save
-      redirect_to request.referrer
+      format.html { redirect_to request.referrer, notice: 'Successfully created the comment.' }
+      format.json { render json: @comment, status: :created, location: @comment }
     else
-      render :new
+      format.html { render action: 'new' }
+      format.json { render json: @comment.errors, status: :unprocessable_entity }
     end
+  end
   end
 
   def destroy
