@@ -8,16 +8,19 @@ gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
 
 gem 'rails-controller-testing'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem 'sprockets-rails'
-
 gem 'cancancan'
 gem 'devise'
 gem 'dotenv-rails', groups: %i[development test]
 gem 'mailcatcher'
+gem 'rswag'
+gem 'rswag-api'
+gem 'rswag-ui'
+gem 'sprockets-rails'
 
 group :development, :test do
   gem 'capybara'
   gem 'rspec-rails', '>= 3.9.0'
+  gem 'rswag-specs'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
